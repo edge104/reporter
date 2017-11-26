@@ -3,7 +3,14 @@
 
     <!-- Post Image -->
     <div class="post-image bg-image-container">
-        <img src="assets/img/posts/post01_lg.jpg" alt="">
+        {assign var="cover" value="uploads/cover_{$article.sn}.png"}
+        <!-- 指派和上傳圖檔相同的路徑給$cover -->
+        {if file_exists($cover)}
+            <!-- 如果$cover有得到值 -->
+            <img src="{$cover}" alt="{$post.title}">                                        
+        {else}
+            <img src="http://fakeimg.pl/1200x630/aaaaaa/EAE0D0/?text=REPORTER" alt="{$post.title}">                  
+        {/if}
     </div>
 
     <div class="post-content section-content">
@@ -23,6 +30,22 @@
                             <li><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;作者：{$article.username}</li>
                             <!-- <li><i class="li-feedback"></i>5 Comments</li> -->
                         </ul>
+                        {if isset($smarty.session.username) and $smarty.session.username==$article.username}
+                        <div class="admin-panel">
+                            <div class="alert alert-primary text-right">
+                                <a class="btn btn-md btn-warning" href="admin.php?op=article_form&sn={$article.sn}">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;修改
+                                </a>&nbsp;&nbsp;
+                                <a class="btn btn-md btn-danger" href="admin.php?op=delete_article&sn={$article.sn}">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;刪除
+                                </a>
+
+
+
+                                
+                            </div>
+                        </div>
+                        {/if}
                     </div>
                     <div class="post-content">
                          {$article.pure_content}

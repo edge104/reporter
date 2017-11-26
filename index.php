@@ -50,7 +50,7 @@ function list_article()
 {
     global $db, $smarty;
 
-    $sql    = "SELECT * FROM `article` ORDER BY `update_time` DESC";
+    $sql    = "SELECT * FROM `article` ORDER BY `update_time` DESC LIMIT 0,9";
     $result = $db->query($sql) or die($db->error);
     $all    = [];
     $i      = 0; //給$all[]設一個初始值，讓all[]在迴圈裡的索引值可穩定+1

@@ -104,11 +104,18 @@ h2,.h2 {  font-weight: 300; }
   padding-bottom: 2rem;
   font-size: 1.4rem;
 }
+.post.single .post-content p {
+  font-size: 1.4rem;
+}
 
 .post.item .post-content p {
   font-size: 1.2rem;
   line-height: 1.6rem;
   color: #696969;
+}
+.post.item .post-content .post-title {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
 }
 
 .post.single .post-content > p,

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-11-23 10:01:23
+/* Smarty version 3.1.30, created on 2017-11-23 16:17:52
   from "E:\UniServerZ\www\tad1062\reporter\templates\admin.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a162bf3180974_74870205',
+  'unifunc' => 'content_5a1684303aa729_87882561',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9a86788e4f12ebdf842b93ea41af133951060d2f' => 
     array (
       0 => 'E:\\UniServerZ\\www\\tad1062\\reporter\\templates\\admin.tpl',
-      1 => 1511402475,
+      1 => 1511424164,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:_footer.tpl' => 1,
   ),
 ),false)) {
-function content_5a162bf3180974_74870205 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a1684303aa729_87882561 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:_header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -56,7 +56,7 @@ $_smarty_tpl->_subTemplateRender("file:_header.tpl", $_smarty_tpl->cache_id, $_s
                         <div class="post-add-comment">
                             <h3 class="text-center mb-5">發佈新聞</h3>
                             <div class="content">
-                                <form action="admin.php" method="post" id="add-comment" class="validate-form">
+                                <form action="admin.php" method="post" id="add-comment" enctype="multipart/form-data" class="validate-form">
                                     <div class="form-group">
                                         <input type="text" name="title" class="form-control" placeholder="標題" required>
                                     </div>
@@ -70,6 +70,15 @@ $_smarty_tpl->_subTemplateRender("file:_header.tpl", $_smarty_tpl->cache_id, $_s
                                             CKEDITOR.replace('article_content');
                                         <?php echo '</script'; ?>
 >
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                        <label class="col-12" for="pic">上傳特色圖片</label>
+                                        <div class="col-12">
+                                            <input type="file" class="form-control" name="pic" id="pic" placeholder="上傳文章封面照片" aria-describedby="fileHelpId" style="font-size:1rem;">
+                                            <small id="fileHelpId" class="form-text text-muted" style="font-size:1rem;">建議尺寸：1200x630</small>
+                                        </div>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 push-md-3">

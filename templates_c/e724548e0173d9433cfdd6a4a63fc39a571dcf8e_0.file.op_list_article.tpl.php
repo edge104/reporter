@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-11-23 15:15:30
+/* Smarty version 3.1.30, created on 2017-11-23 17:07:24
   from "E:\UniServerZ\www\tad1062\reporter\templates\op_list_article.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a167592c39ca7_38520704',
+  'unifunc' => 'content_5a168fcc5f6323_46485415',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e724548e0173d9433cfdd6a4a63fc39a571dcf8e' => 
     array (
       0 => 'E:\\UniServerZ\\www\\tad1062\\reporter\\templates\\op_list_article.tpl',
-      1 => 1511420334,
+      1 => 1511428041,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a167592c39ca7_38520704 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a168fcc5f6323_46485415 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
         <!-- Section - Start -->
@@ -65,7 +65,19 @@ foreach ($_from as $_smarty_tpl->tpl_vars['data']->value) {
                             <article class="post item">
                                 <div class="post-image">
                                     <a href="index.php?sn=<?php echo $_smarty_tpl->tpl_vars['data']->value['sn'];?>
-"><img src="assets/img/posts/post03.jpg" alt=""></a>
+">
+                                    <?php $_smarty_tpl->_assignInScope('cover', "uploads/thumb_".((string)$_smarty_tpl->tpl_vars['data']->value['sn']).".png");
+?>
+                                    <!-- 指派和上傳圖檔相同的路徑給$cover -->
+                                    <?php if (file_exists($_smarty_tpl->tpl_vars['cover']->value)) {?>
+                                    <!-- 如果$cover有得到值 -->
+                                    <img src="<?php echo $_smarty_tpl->tpl_vars['cover']->value;?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['post']->value['title'];?>
+"> <?php } else { ?>
+                                    <img src="http://fakeimg.pl/600x315/aaaaaa/EAE0D0/?text=REPORTER" alt="<?php echo $_smarty_tpl->tpl_vars['post']->value['title'];?>
+"> 
+                                    <?php }?>
+                                    </a>
                                 </div>
                                 <div class="post-content">
                                     <h4 class="post-title"><a href="index.php?sn=<?php echo $_smarty_tpl->tpl_vars['data']->value['sn'];?>
@@ -91,7 +103,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                     </div>
                     <div class="text-center mt-3">
-                        <a href="blog-panel.html" class="btn btn-lg btn-outline-primary">檢視全部新聞</a>
+                        <!-- <a href="blog-panel.html" class="btn btn-lg btn-outline-primary">檢視全部新聞</a> -->
                     </div>
                 </div>
             </div>

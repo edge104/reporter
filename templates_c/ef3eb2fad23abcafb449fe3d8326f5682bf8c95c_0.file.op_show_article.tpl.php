@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-11-23 15:38:22
+/* Smarty version 3.1.30, created on 2017-11-23 21:58:10
   from "E:\UniServerZ\www\tad1062\reporter\templates\op_show_article.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a167aee8fe147_46936051',
+  'unifunc' => 'content_5a16d3f2e986a2_68259941',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef3eb2fad23abcafb449fe3d8326f5682bf8c95c' => 
     array (
       0 => 'E:\\UniServerZ\\www\\tad1062\\reporter\\templates\\op_show_article.tpl',
-      1 => 1511422695,
+      1 => 1511445473,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a167aee8fe147_46936051 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a16d3f2e986a2_68259941 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- Post / Single -->
 <article class="post single">
 
     <!-- Post Image -->
     <div class="post-image bg-image-container">
-        <img src="assets/img/posts/post01_lg.jpg" alt="">
+        <?php $_smarty_tpl->_assignInScope('cover', "uploads/cover_".((string)$_smarty_tpl->tpl_vars['article']->value['sn']).".png");
+?>
+        <!-- 指派和上傳圖檔相同的路徑給$cover -->
+        <?php if (file_exists($_smarty_tpl->tpl_vars['cover']->value)) {?>
+            <!-- 如果$cover有得到值 -->
+            <img src="<?php echo $_smarty_tpl->tpl_vars['cover']->value;?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['post']->value['title'];?>
+">                                        
+        <?php } else { ?>
+            <img src="http://fakeimg.pl/1200x630/aaaaaa/EAE0D0/?text=REPORTER" alt="<?php echo $_smarty_tpl->tpl_vars['post']->value['title'];?>
+">                  
+        <?php }?>
     </div>
 
     <div class="post-content section-content">
@@ -50,6 +61,54 @@ function content_5a167aee8fe147_46936051 (Smarty_Internal_Template $_smarty_tpl)
 </li>
                             <!-- <li><i class="li-feedback"></i>5 Comments</li> -->
                         </ul>
+                        <?php if (isset($_SESSION['username']) && $_SESSION['username'] == $_smarty_tpl->tpl_vars['article']->value['username']) {?>
+                        <div class="admin-panel">
+                            <div class="alert alert-primary text-right">
+                                <a class="btn btn-md btn-warning" href="admin.php?op=article_form&sn=<?php echo $_smarty_tpl->tpl_vars['article']->value['sn'];?>
+">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;修改
+                                </a>&nbsp;&nbsp;
+                                <a class="btn btn-md btn-danger" href="javascript:delete_article('<?php echo $_smarty_tpl->tpl_vars['article']->value['sn'];?>
+')">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;刪除
+                                </a>
+
+                                <?php echo '<script'; ?>
+ src="class/bootstrap-sweetalert/sweetalert.js"><?php echo '</script'; ?>
+>
+                                <link rel="stylesheet" type="text/css" href="class/bootstrap-sweetalert/sweetalert.css">
+                                <?php echo '<script'; ?>
+ type="text/javascript">
+                                    function delete_article(sn) {
+                                        swal({
+                                            title: "確定要刪除嗎？",
+                                            text: "刪掉文章之後就再也回來不囉!",
+                                            type: "warning",
+                                            showCancelButton: true,
+                                            confirmButtonClass: "btn-danger",
+                                            confirmButtonText: "是！我要刪了它！",
+                                            closeOnConfirm: false
+                                        },
+                                            function () {
+                                                location.href = 'admin.php?op=delete_article&sn=' + sn;
+                                                swal("好啦！刪完了！", "即將導回網站首頁", "success");
+                                            });
+                                    }
+                                <?php echo '</script'; ?>
+>
+
+
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                        <?php }?>
                     </div>
                     <div class="post-content">
                          <?php echo $_smarty_tpl->tpl_vars['article']->value['pure_content'];?>

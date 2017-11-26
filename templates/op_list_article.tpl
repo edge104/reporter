@@ -36,7 +36,15 @@
                             <!-- Post - Item -->
                             <article class="post item">
                                 <div class="post-image">
-                                    <a href="index.php?sn={$data.sn}"><img src="assets/img/posts/post03.jpg" alt=""></a>
+                                    <a href="index.php?sn={$data.sn}">
+                                    {assign var="cover" value="uploads/thumb_{$data.sn}.png"}
+                                    <!-- 指派和上傳圖檔相同的路徑給$cover -->
+                                    {if file_exists($cover)}
+                                    <!-- 如果$cover有得到值 -->
+                                    <img src="{$cover}" alt="{$post.title}"> {else}
+                                    <img src="http://fakeimg.pl/600x315/aaaaaa/EAE0D0/?text=REPORTER" alt="{$post.title}"> 
+                                    {/if}
+                                    </a>
                                 </div>
                                 <div class="post-content">
                                     <h4 class="post-title"><a href="index.php?sn={$data.sn}">{$data.title}</a></h4>
@@ -52,7 +60,7 @@
                         {/foreach}
                     </div>
                     <div class="text-center mt-3">
-                        <a href="blog-panel.html" class="btn btn-lg btn-outline-primary">檢視全部新聞</a>
+                        <!-- <a href="blog-panel.html" class="btn btn-lg btn-outline-primary">檢視全部新聞</a> -->
                     </div>
                 </div>
             </div>
