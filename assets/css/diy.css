@@ -31,14 +31,20 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   line-height: 1.5;
   font-weight: 600;
 }
-
-h1,
-.h1 {
+h1 {
   font-weight: 400;
-  font-size: 1.8rem;
+  /* font-size: 1.8rem; */
+}
+h1.display-2.mb-1.text-right {
+  font-weight: 400;
+  /* font-size: 1.8rem; */
   color: #fff;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
   background-color: rgba(0, 0, 0, 0.4)
+}
+.post-title h1 {
+  font-weight: 400;
+  font-size: 2.4rem;
 }
 h3,
 .h3 {
@@ -72,7 +78,7 @@ h2,.h2 {  font-weight: 300; }
   font-weight: 300;
 }
 
-.post.single .date {
+.post.single .date, .post.single .post-meta * {
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
@@ -85,18 +91,24 @@ h2,.h2 {  font-weight: 300; }
 
 .post.single .post-header {
   text-align: center;
-  margin-bottom: 3rem;
   border-bottom: 4px solid #f9f9f9;
-  padding-bottom: 2.5rem;
 }
 
 .post.single .post-header .post-title {
   margin: 1rem 0;
 }
 
+
 .post.single .post-content {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.4rem;
+}
+
+.post.item .post-content p {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #696969;
 }
 
 .post.single .post-content > p,
@@ -107,15 +119,16 @@ h2,.h2 {  font-weight: 300; }
 
 @media (max-width: 991px) {
   .post.single .post-content {
-    padding-top: 3rem;
+    padding-top: 2rem;
   }
 }
 
 @media (max-width: 575px) {
   .post.single .post-content {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
   }
 }
+
 
 
 .form-control {

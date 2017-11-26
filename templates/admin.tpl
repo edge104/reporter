@@ -40,6 +40,7 @@
                                     <div class="row">
                                         <div class="col-md-6 push-md-3">
                                             <input type="hidden" name="op" value="insert">
+                                            <input type="hidden" name="username" value="{$smarty.session.username}">
                                             <button class="btn btn-lg btn-primary btn-block">確 認 發 佈</button>
                                         </div>
                                     </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-11-22 22:21:02
+/* Smarty version 3.1.30, created on 2017-11-23 10:01:23
   from "E:\UniServerZ\www\tad1062\reporter\templates\admin.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a1587ceeb5de3_81597096',
+  'unifunc' => 'content_5a162bf3180974_74870205',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9a86788e4f12ebdf842b93ea41af133951060d2f' => 
     array (
       0 => 'E:\\UniServerZ\\www\\tad1062\\reporter\\templates\\admin.tpl',
-      1 => 1511360457,
+      1 => 1511402475,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:_footer.tpl' => 1,
   ),
 ),false)) {
-function content_5a1587ceeb5de3_81597096 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a162bf3180974_74870205 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:_header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -74,6 +74,8 @@ $_smarty_tpl->_subTemplateRender("file:_header.tpl", $_smarty_tpl->cache_id, $_s
                                     <div class="row">
                                         <div class="col-md-6 push-md-3">
                                             <input type="hidden" name="op" value="insert">
+                                            <input type="hidden" name="username" value="<?php echo $_SESSION['username'];?>
+">
                                             <button class="btn btn-lg btn-primary btn-block">確 認 發 佈</button>
                                         </div>
                                     </div>
