@@ -1,0 +1,123 @@
+/* google fonts 中文字型 */
+/*黑體*/
+/* @import url(//fonts.googleapis.com/earlyaccess/cwtexhei.css); */
+/*用法：font-family: 'cwTeXHei', sans-serif;*/
+
+/*圓體*/
+/* @import url(//fonts.googleapis.com/earlyaccess/cwtexyen.css); */
+/*用法：font-family: 'cwTeXYen', sans-serif;*/
+
+/*楷體*/
+/* @import url(//fonts.googleapis.com/earlyaccess/cwtexkai.css); */
+/*用法：font-family: 'cwTeXKai', serif;*/
+
+/*仿宋體*/
+@import url(//fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+/*用法：font-family: 'cwTeXFangSong', serif;*/
+
+
+body {
+  position: relative;
+  color: #2f2f2f;
+  font-family: 'cwTeXFangSong', serif;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Headings */
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+h1,
+.h1 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.4)
+}
+h3,
+.h3 {
+  font-size: 2.2rem;
+}
+
+@media (max-width: 991px) {
+  h1,.h1 {  font-size: 1.4rem; }
+}
+
+h2,.h2 {  font-weight: 300; }
+
+@media (max-width: 991px) {
+    h2,.h2 {  font-size: 1.75rem;  }
+}
+
+.nav-primary-horizontal li a,
+.nav-primary-horizontal li .nav-link,
+.nav-primary-horizontal .nav-item a,
+.nav-primary-horizontal .nav-item .nav-link {
+  font-size: 1.25rem;
+}
+
+.section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#footer p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.post.single .date {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.post.single .post-image {
+  position: relative;
+  height: 60vh;
+  min-height: 300px;
+}
+
+.post.single .post-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 4px solid #f9f9f9;
+  padding-bottom: 2.5rem;
+}
+
+.post.single .post-header .post-title {
+  margin: 1rem 0;
+}
+
+.post.single .post-content {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.post.single .post-content > p,
+.post.single .post-content > figure,
+.post.single .post-content > blockquote {
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 991px) {
+  .post.single .post-content {
+    padding-top: 3rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .post.single .post-content {
+    padding-top: 2rem;
+  }
+}
+
+
+.form-control {
+  font-size: 1.25rem;
+}
