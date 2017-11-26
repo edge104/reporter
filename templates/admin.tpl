@@ -31,7 +31,11 @@
                                         <input type="text" name="title" class="form-control" placeholder="標題" required>
                                     </div>
                                     <div class="form-group">
-                                        <textarea id="content" name="content" cols="30" rows="12" class="form-control" placeholder="內文" required></textarea>
+                                        <script src="ckeditor/ckeditor.js"></script>
+                                        <textarea name="content" id="article_content" class="form-control"></textarea>
+                                        <script>
+                                            CKEDITOR.replace('article_content');
+                                        </script>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 push-md-3">

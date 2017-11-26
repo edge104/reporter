@@ -1,4 +1,5 @@
 <?php
+require "loginheader.php"; //請求檢查登入狀態
 require_once '_header.php';
 $page_title = '控制台';
 

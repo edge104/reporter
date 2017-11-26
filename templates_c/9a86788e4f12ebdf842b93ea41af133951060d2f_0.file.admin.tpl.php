@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-11-21 15:49:41
+/* Smarty version 3.1.30, created on 2017-11-22 22:21:02
   from "E:\UniServerZ\www\tad1062\reporter\templates\admin.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a13da951ea204_49304490',
+  'unifunc' => 'content_5a1587ceeb5de3_81597096',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9a86788e4f12ebdf842b93ea41af133951060d2f' => 
     array (
       0 => 'E:\\UniServerZ\\www\\tad1062\\reporter\\templates\\admin.tpl',
-      1 => 1511250571,
+      1 => 1511360457,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:_footer.tpl' => 1,
   ),
 ),false)) {
-function content_5a13da951ea204_49304490 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a1587ceeb5de3_81597096 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:_header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -61,7 +61,15 @@ $_smarty_tpl->_subTemplateRender("file:_header.tpl", $_smarty_tpl->cache_id, $_s
                                         <input type="text" name="title" class="form-control" placeholder="標題" required>
                                     </div>
                                     <div class="form-group">
-                                        <textarea id="content" name="content" cols="30" rows="12" class="form-control" placeholder="內文" required></textarea>
+                                        <?php echo '<script'; ?>
+ src="ckeditor/ckeditor.js"><?php echo '</script'; ?>
+>
+                                        <textarea name="content" id="article_content" class="form-control"></textarea>
+                                        <?php echo '<script'; ?>
+>
+                                            CKEDITOR.replace('article_content');
+                                        <?php echo '</script'; ?>
+>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 push-md-3">
