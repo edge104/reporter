@@ -33,7 +33,7 @@
                         {if isset($smarty.session.username) and $smarty.session.username==$article.username}
                         <div class="admin-panel">
                             <div class="alert alert-primary text-right">
-                                <a class="btn btn-md btn-warning" href="admin.php?op=article_form&sn={$article.sn}">
+                                <a class="btn btn-md btn-warning" href="admin.php?op=modify_article&sn={$article.sn}">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;修改
                                 </a>&nbsp;&nbsp;
                                 <a class="btn btn-md btn-danger" href="javascript:delete_article('{$article.sn}')">

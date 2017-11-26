@@ -142,6 +142,17 @@ h2,.h2 {  font-weight: 300; }
   font-size: 1.25rem;
 }
 
+/*****************個人選單樣式*******************/
+.dropdown-header {
+  font-size: 1.2rem;
+}
+.dropdown-item {
+  font-size: 1.15rem;
+  text-align: center;
+}
+.dropdown.photo img , .dropdown.photo {
+  border-radius:0;
+}
 
 /***************PHP LOGIN2.0*****************/
 /*****************表單樣式*******************/

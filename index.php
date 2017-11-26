@@ -23,28 +23,6 @@ require_once '_footer.php';
 
 /***************** ↓ 函式區 ↓ ********************/
 
-//讀出單一文章
-function show_article($sn)
-{
-    global $db, $smarty;
-
-    require_once 'HTMLPurifier/HTMLPurifier.auto.php';
-    $config   = HTMLPurifier_Config::createDefault();
-    $purifier = new HTMLPurifier($config);
-
-    $sql    = "SELECT * FROM `article` WHERE `sn`='$sn'";
-    $result = $db->query($sql) or die($db->error);
-    $data   = $result->fetch_assoc();
-
-    $data['pure_content'] = $purifier->purify($data['content']);
-    //把資料裡的update_time調整成合適的時間式式，打包成display_time給$data[]
-    $data['display_time'] = date("d M Y", strtotime($data['update_time']));
-    $smarty->assign('article', $data);
-
-    //die(var_export($display_time));
-
-}
-
 //讀出所有文章
 function list_article()
 {
