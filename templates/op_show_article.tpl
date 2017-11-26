@@ -36,13 +36,39 @@
                                 <a class="btn btn-md btn-warning" href="admin.php?op=article_form&sn={$article.sn}">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;修改
                                 </a>&nbsp;&nbsp;
-                                <a class="btn btn-md btn-danger" href="admin.php?op=delete_article&sn={$article.sn}">
+                                <a class="btn btn-md btn-danger" href="javascript:delete_article('{$article.sn}')">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;刪除
                                 </a>
 
+                                <script src="class/bootstrap-sweetalert/sweetalert.js"></script>
+                                <link rel="stylesheet" type="text/css" href="class/bootstrap-sweetalert/sweetalert.css">
+                                <script type="text/javascript">
+                                    function delete_article(sn) {
+                                        swal({
+                                            title: "確定要刪除嗎？",
+                                            text: "刪掉文章之後就再也回來不囉!",
+                                            type: "warning",
+                                            showCancelButton: true,
+                                            confirmButtonClass: "btn-danger",
+                                            confirmButtonText: "是！我要刪了它！",
+                                            closeOnConfirm: false
+                                        },
+                                            function () {
+                                                location.href = 'admin.php?op=delete_article&sn=' + sn;
+                                                swal("好啦！刪完了！", "即將導回網站首頁", "success");
+                                            });
+                                    }
+                                </script>
 
 
-                                
+
+
+
+
+
+
+
+
                             </div>
                         </div>
                         {/if}

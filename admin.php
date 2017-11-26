@@ -13,6 +13,11 @@ switch ($op) {
         header("location: index.php?sn={$sn}");
         exit;
 
+    case 'delete_article':
+        $sn = delete_article($sn);
+        header("location: index.php");
+        exit;
+
     default:
         $op = "";
         break;
@@ -65,4 +70,19 @@ function insert_article()
     }
 
     return $sn;
+}
+
+//刪除文章
+function delete_article($sn)
+{
+    global $db;
+
+    $sql = "DELETE FROM `article` WHERE sn='{$sn}' and username='{$_SESSION['username']}'";
+    $db->query($sql) or die($db->error);
+
+    if (file_exists("uploads/cover_{$sn}.jpg")) {
+        unlink("uploads/cover_{$sn}.jpg");
+        unlink("uploads/thumb_{$sn}.jpg");
+    }
+
 }
